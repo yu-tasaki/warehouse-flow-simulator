@@ -57,9 +57,12 @@ class Order:
         Returns:
             処理時間（秒）。未完了の場合は現在までの時間
         """
+        current_time = time.time()
         if self.completed_time:
-            return self.completed_time - self.created_time
-        return time.time() - self.created_time
+            # 完了時間が設定されている場合のみ計算
+            return max(0, self.completed_time - self.created_time)  # 負の値を防止
+        # 未完了の場合は現在までの経過時間
+        return max(0, current_time - self.created_time)  # 負の値を防止
     
     def __str__(self) -> str:
         """オーダーの文字列表現"""

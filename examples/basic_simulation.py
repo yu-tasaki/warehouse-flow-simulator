@@ -34,7 +34,7 @@ def run_basic_simulation():
     
     # 数件のオーダーを生成
     for _ in range(5):
-        simulator.generate_random_order(min_items=2, max_items=4)
+        simulator.generate_random_order(min_items=2, max_items=5)
     
     print(f"オーダーを生成しました: {len(simulator.orders)} 件")
     

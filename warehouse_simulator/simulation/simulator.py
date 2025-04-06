@@ -135,8 +135,16 @@ class WarehouseSimulator:
         
         # 平均オーダー完了時間
         if self.completed_orders:
-            avg_time = sum(order.get_processing_time() for order in self.completed_orders) / len(self.completed_orders)
-            self.stats['avg_order_completion_time'] = avg_time
+            # 完了したオーダーのみを対象に
+            processing_times = [order.get_processing_time() for order in self.completed_orders 
+                            if order.completed_time is not None]
+            if processing_times:  # 空でないことを確認
+                avg_time = sum(processing_times) / len(processing_times)
+                self.stats['avg_order_completion_time'] = avg_time
+            else:
+                self.stats['avg_order_completion_time'] = 0.0
+        else:
+            self.stats['avg_order_completion_time'] = 0.0
         
         # 作業者の稼働率
         for worker in self.workers:
