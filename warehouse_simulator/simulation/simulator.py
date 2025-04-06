@@ -1,6 +1,7 @@
 import random
 import numpy as np
 import pandas as pd
+import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from matplotlib.animation import FuncAnimation
@@ -10,6 +11,10 @@ from warehouse_simulator.models.warehouse_map import WarehouseMap
 from warehouse_simulator.models.worker import WarehouseWorker
 from warehouse_simulator.models.order import Order
 
+matplotlib.rcParams['font.family'] = 'MS Gothic'  # Windows用
+# Macの場合は 'Hiragino Sans GB' や 'AppleGothic'、Linuxの場合は 'IPAGothic' などに変更
+matplotlib.rcParams['pdf.fonttype'] = 42
+matplotlib.rcParams['ps.fonttype'] = 42
 
 class WarehouseSimulator:
     """

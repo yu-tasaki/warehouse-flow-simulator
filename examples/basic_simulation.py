@@ -1,5 +1,6 @@
 import os
 import sys
+import matplotlib
 import matplotlib.pyplot as plt
 
 # モジュールのインポートパスを追加
@@ -11,6 +12,11 @@ from warehouse_simulator.analysis.efficiency import EfficiencyAnalyzer
 from warehouse_simulator.analysis.movement import MovementAnalyzer
 from warehouse_simulator.analysis.hotspot import HotspotAnalyzer
 from warehouse_simulator.utils.data_export import DataExporter
+
+matplotlib.rcParams['font.family'] = 'MS Gothic'  # Windows用
+# Macの場合は 'Hiragino Sans GB' や 'AppleGothic'、Linuxの場合は 'IPAGothic' などに変更
+matplotlib.rcParams['pdf.fonttype'] = 42
+matplotlib.rcParams['ps.fonttype'] = 42
 
 
 def run_basic_simulation():

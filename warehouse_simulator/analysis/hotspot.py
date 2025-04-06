@@ -1,10 +1,16 @@
 import numpy as np
 import pandas as pd
+import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from typing import Dict, List, Tuple, Optional, Any
 
 from warehouse_simulator.models.warehouse_map import WarehouseMap
+
+if 'font.family' not in matplotlib.rcParams or matplotlib.rcParams['font.family'] == 'sans-serif':
+    matplotlib.rcParams['font.family'] = 'MS Gothic'  # Windows用
+    matplotlib.rcParams['pdf.fonttype'] = 42
+    matplotlib.rcParams['ps.fonttype'] = 42
 
 
 class HotspotAnalyzer:

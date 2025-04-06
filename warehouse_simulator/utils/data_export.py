@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import matplotlib
 import matplotlib.pyplot as plt
 from typing import Dict, List, Any, Optional
 
@@ -7,6 +8,9 @@ from warehouse_simulator.simulation.simulator import WarehouseSimulator
 from warehouse_simulator.analysis.movement import MovementAnalyzer
 from warehouse_simulator.analysis.efficiency import EfficiencyAnalyzer
 from warehouse_simulator.analysis.hotspot import HotspotAnalyzer
+
+matplotlib.rcParams['pdf.fonttype'] = 42
+matplotlib.rcParams['ps.fonttype'] = 42
 
 
 class DataExporter:
