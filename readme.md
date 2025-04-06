@@ -32,7 +32,6 @@ pip install -e .
 
 ```python
 from warehouse_simulator.models.warehouse_map import WarehouseMap
-from warehouse_simulator.models.worker import WarehouseWorker
 from warehouse_simulator.simulation.simulator import WarehouseSimulator
 
 # シミュレータの初期化
@@ -60,14 +59,6 @@ efficiency_df = simulator.analyze_worker_efficiency()
 - Matplotlib
 - NetworkX
 
-## ドキュメント
-
-詳細なドキュメントは [ドキュメントサイト](https://yourusername.github.io/warehouse-flow-simulator) を参照してください。
-
 ## ライセンス
 
 MIT License
-
-## 貢献
-
-貢献は歓迎します！バグ報告、機能リクエスト、プルリクエストなどはGitHubの[Issues](https://github.com/yourusername/warehouse-flow-simulator/issues)にお願いします。
